@@ -297,7 +297,100 @@ p {
 
 
 @media (max-width: 900px) {
-    .modal-content p {
-        font-size: 1rem;
-    }
+  .modal-content {
+    width: 700px;
+    padding: 35px;
+  }
+
+  .modal-content h2 {
+    font-size: 44px;
+  }
+
+  .modal-content p {
+    font-size: 28px;
+  }
+
+  .birthday-btn {
+    font-size: 20px;
+    padding: 14px 30px;
+  }
+}
+
+/* Hasta 800px */
+@media (max-width: 800px) {
+  .modal-content {
+    width: 600px;
+    padding: 30px;
+  }
+
+  .modal-content h2 {
+    font-size: 40px;
+  }
+
+  .modal-content p {
+    font-size: 26px;
+  }
+
+  .birthday-btn {
+    font-size: 18px;
+    padding: 12px 28px;
+  }
+}
+
+/* Hasta 768px (modo teléfono vertical) */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    padding: 25px;
+    border-radius: 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 36px;
+  }
+
+  .modal-content p {
+    font-size: 24px;
+  }
+
+  .close-btn {
+    font-size: 28px;
+    top: 8px;
+    right: 12px;
+  }
+
+  .birthday-btn {
+    font-size: 18px;
+    padding: 12px 25px;
+  }
+}
+
+/* 📱 Hasta 480px (teléfonos chicos tipo Moto G o iPhone SE) */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .modal-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .modal-content p {
+    font-size: 22px;
+    line-height: 1.5;
+  }
+
+  .close-btn {
+    font-size: 26px;
+    top: 8px;
+    right: 10px;
+  }
+
+  .birthday-btn {
+    font-size: 16px;
+    padding: 10px 22px;
+  }
 }
