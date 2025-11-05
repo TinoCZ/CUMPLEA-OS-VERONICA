@@ -1,396 +1,174 @@
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height:100vh;
-  background-color: #a558ac;
-}
-
-.birthdayCard {
-  position: relative;
-  width: 250px;
-  height:350px;
-  cursor: pointer;
-  transform-style: preserve-3d;
-	transform: perspective(2500px);
-  transition: 4s;
-}
-
-.birthdayCard:hover {
-	transform: perspective(2500px) rotate(5deg);
-	box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 0 10px 100px rgba(0,0,0,0.3);
-}
-
-.birthdayCard:hover .cardFront {
-  transform: rotateY(-160deg); 
-}
-
-.birthdayCard:hover .front-text {
-  display: none;
-}
-
-.birthdayCard:hover .wrap-deco {
-  display: none;
-}
-
-.birthdayCard:hover .wrap-decoTwo {
-  display: none;
-}
-
-.birthdayCard:hover .plate {
-  display: none;
-}
-
-.cardFront {
-  position: relative;
-  background-color: #fff;
-  width: 250px;
-  height:350px;
-  overflow: hidden;
-  transform-origin: left;
-  box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
-  transition: .4s;
-}
-
-.happy, .toyou {
-  position: relative;
-  font-family: didot;
-  text-align: center;
-  backface-visibility: hidden;
-  font-size: 30px; 
-}
-
-.happy {
-  top:198px;
-}
-
-.toyou {
-  top:123px;
-}
-
-.bday {
-  position: relative;
-  font-family: arial;
-  font-size: 35px;
-  text-align: center;
-  top:163px;
-}
-
-.wrap-deco {
-  position: absolute;
-  top:-230px;
-  left:-200px;
-}
-
-.decorations {
-  position: absolute;
-  width: 400px;
-  height: 300px;
-  border: 3px solid #333;
-  border-radius: 50%;
-}
-
-.decorations:before, .decorations:after, .decorationsTwo:before, .decorationsTwo:after, .decorationsThree:before, .decorationsThree:after {
-  content:"";
-  position: absolute;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  width:0;
-  height:0;
-}
-
-.decorations:before {
-  border-top: 40px solid #f15bb5;
-  top:297px;
-  left:210px;
-  transform: rotate(-5deg);
-}
-
-.decorations:after{
-  border-top: 40px solid #f4d35e;
-  top:288px;
-  left:260px;
-  transform: rotate(-17deg);
-}
-
-.decorationsTwo:before {
-  border-top: 40px solid #00f5d4;
-  top:268px;
-  left:315px;
-  transform: rotate(-30deg);
-}
-
-.decorationsTwo:after, .decorationsThree:after {
-  border-top: 40px solid #9b5de5;
-  top:238px;
-  left:355px;
-  transform: rotate(-40deg);
-}
-
-.wrap-decoTwo {
-  transform: scaleX(-1);
-  position: absolute;
-  top:-230px;
-  left:445px; 
-}
-
-.decorationsThree:before {
-  border-top: 40px solid #00bbf9;
-  top:268px;
-  left:315px;
-  transform: rotate(-30deg);
-}
-
-.plate {
-  position: absolute;
-  width: 130px;
-  height: 5px;
-  background-color: #00bbf9;
-  left:60px;
-  top:213px;
-}
-
-.cake {
-  position: absolute;
-  overflow: hidden;
-  width:100px;
-  height: 50px;
-  background-color: #f15bb5;
-  border-radius: 10px 10px 0 0;
-  top:-50px;
-  left:15px;
-  box-shadow: inset 0 -15px #f9c74f, inset 0 15px #432818;
-}
-
-.cake:before {
-  content:"";
-  position: absolute;
-  background-color: #432818;
-  width:10px;
-  height:20px;
-  top:5px;
-  border-radius:20px;
-  box-shadow: 10px 5px #f15bb5, 20px 0px #432818, 30px 2px #f15bb5, 40px 5px #432818, 50px 5px #f15bb5, 60px 0px #432818, 70px 5px #f15bb5, 80px 5px #432818, 90px 5px #f15bb5;
-}
-
-.plate:before {
-  content:"";
-  position: absolute;
-  background: repeating-linear-gradient(-45deg, #9b5de5, #9b5de5 3px, #00f5d4 3px, #00f5d4 6px);
-  width:7px;
-  height: 25px;
-  top:-75px;
-  left:61px;
-}
-
-.plate:after {
-  content:"";
-  position: absolute;
-  width:1px;
-  height: 5px;
-  background-color: #333;
-  top:-80px;
-  left:64px;
-}
-
-
-.flame {
-  position: absolute;
-  background-color: #fb5607;
-  border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
-  transform: rotate(-45deg);
-  width:15px;
-  height:15px;
-  opacity:0.7;
-  top:-93px;
-  left:57px;
-}
-
-.cardInside {
-  position: absolute;
-  background-color: #fff;
-  width: 250px;
-  height:350px;
-  z-index:-1;
-  left:0;
-  top:0;
-  box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
-}
-
-.inside-text {
-  position: relative;
-  top:-160px;
-  transform: scale(0.7);
-}
-
-.wishes {
-  position: relative;
-  top:-100px;
-  margin: 25px;
-}
-
-p {
-  font-family: 'Brush Script MT', cursive;
-  color: #333;
-}
-
-.name {
-  margin-left:150px;
-}
-
-
-.modal {
-    display: none; /* CORRECCIÓN: Cambiar a 'none' */
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
+ body {
+    margin: 0;
+    height: 100vh;
+    background-color: #b25ac2;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.modal-content {
-    background-color: #ffe6eb;
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    width: 80%;
-    max-width: 500px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .card {
+    width: 260px;
+    height: 350px;
+    perspective: 1000px;
+  }
+
+  .card-inner {
     position: relative;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-     max-height: 90vh; /* Establece la altura máxima al 80% de la ventana */
-    overflow-y: auto; /* Habilita el scroll vertical cuando sea necesario */
-}
-.close {
-    color: #aaa;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front, .card-back {
     position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-.close:hover,
-.close:focus { color: #333; text-decoration: none; cursor: pointer; }
-.modal-content h2 { color: #ff6680; margin-bottom: 20px; font-size: 2rem; }
-.modal-content p { color: #333; font-size: 1.2rem; line-height: 1.5; }
-
-
-.alineamiento{
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    background: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-}
+    align-items: center;
+  }
 
-.cta {
-    margin-top: 1.5rem;
-    padding: 0.8rem 1.5rem;
-    border: 2px solid #333;
+  .card-front {
+    background: white;
+  }
+
+  .card-back {
+    background: #fff5ff;
+    transform: rotateY(180deg);
+    padding: 20px;
+  }
+
+  .cake {
+    font-size: 60px;
+  }
+
+  h1 {
+    margin: 10px 0 0 0;
+    font-size: 20px;
+    color: #333;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #000;
+  }
+
+  h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #444;
+  }
+
+  .banner {
+    position: absolute;
+    top: 20px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 25px solid;
+  }
+
+  .t1 { border-top-color: #ff69b4; }
+  .t2 { border-top-color: #faff00; }
+  .t3 { border-top-color: #40e0d0; }
+
+  .btn {
+    margin-top: 40px;
+    background-color: #ff6b6b;
+    border: none;
+    padding: 15px 30px;
     border-radius: 25px;
-    font-size: 1.1rem;
-    background: #ff6680;
+    font-size: 16px;
     color: white;
     cursor: pointer;
-    transition: all 0.3s;
-}
-.cta:hover { transform: scale(1.1); background: #ff4d6d; }
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
 
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
 
-@media (max-width: 900px) {
+  /* Modal */
+  .modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .modal.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .modal-content {
-    width: 700px;
-    padding: 35px;
+     background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;        /* ← limita la altura */
+  overflow-y: auto;        /* ← habilita el scroll */
+  text-align: center;
+  position: relative;
+  animation: pop 0.6s ease;
+  scrollbar-width: thin;   /* estiliza el scroll (Firefox) */
+  scrollbar-color: #ff6b6b #fff5ff;
   }
 
-  .modal-content h2 {
-    font-size: 44px;
+  @keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
   }
 
-  .modal-content p {
-    font-size: 28px;
-  }
-
-  .birthday-btn {
-    font-size: 20px;
-    padding: 14px 30px;
-  }
-}
-
-/* Hasta 800px */
-@media (max-width: 800px) {
-  .modal-content {
-    width: 600px;
-    padding: 30px;
-  }
-
-  .modal-content h2 {
-    font-size: 40px;
-  }
-
-  .modal-content p {
-    font-size: 26px;
-  }
-
-  .birthday-btn {
-    font-size: 18px;
-    padding: 12px 28px;
-  }
-}
-
-/* Hasta 768px (modo teléfono vertical) */
-@media (max-width: 768px) {
-  .modal-content {
-    width: 90%;
-    padding: 25px;
-    border-radius: 15px;
-  }
-
-  .modal-content h2 {
-    font-size: 36px;
-  }
-
-  .modal-content p {
-    font-size: 24px;
-  }
-
-  .close-btn {
-    font-size: 28px;
-    top: 8px;
-    right: 12px;
-  }
-
-  .birthday-btn {
-    font-size: 18px;
-    padding: 12px 25px;
-  }
-}
-
-/* 📱 Hasta 480px (teléfonos chicos tipo Moto G o iPhone SE) */
-@media (max-width: 480px) {
-  .modal-content {
-    width: 95%;
-    padding: 20px;
-    border-radius: 14px;
-  }
-
-  .modal-content h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
-  }
-
-  .modal-content p {
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
     font-size: 22px;
-    line-height: 1.5;
+    cursor: pointer;
   }
 
-  .close-btn {
-    font-size: 26px;
-    top: 8px;
-    right: 10px;
+  /* Confetti canvas */
+  #confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
   }
 
-  .birthday-btn {
-    font-size: 16px;
-    padding: 10px 22px;
+
+  @media (max-width: 900px) {
+    .modal-content{
+      width: 350px;
+    }
   }
-}
